@@ -17,9 +17,16 @@ namespace BookStore.Pages
             _logger = logger;
         }
 
+        
+        [BindProperty(SupportsGet =true)]
+        public String Author { get; set; }
+
         public void OnGet()
         {
-
+            if (string.IsNullOrWhiteSpace(Author))
+            {
+                Author = "Unknown";
+            }
         }
     }
 }

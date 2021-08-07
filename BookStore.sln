@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore-ClassLibrary", "B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore-tm", "BookStore-tm\BookStore-tm.csproj", "{391C22D7-2C92-4C31-B582-24D33A88EEF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksAPI", "BooksAPI\BooksAPI.csproj", "{BF8A92A4-1D5C-45D4-8718-0FC65B4EB2BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksAPI", "BooksAPI\BooksAPI.csproj", "{BF8A92A4-1D5C-45D4-8718-0FC65B4EB2BC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B307EEA0-2C95-4659-A885-B65EA20E5CB5}"
 	ProjectSection(SolutionItems) = preProject
