@@ -1,10 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BookStore.Model;
+using BooksAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+
 
 namespace BookStore.Pages.BookPages
 {
@@ -12,7 +9,9 @@ namespace BookStore.Pages.BookPages
     {
 
         [BindProperty]
-        public BooksModel AddBook { get; set; }
+        public Book AddBook { get; set; }
+        public object Author { get; private set; }
+
         public void OnGet()
         {
 
