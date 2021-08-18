@@ -1,5 +1,6 @@
-using BooksAPI.Models;
+
 using BooksAPI.Repo;
+using BookStore.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;

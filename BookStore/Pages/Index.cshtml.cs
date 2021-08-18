@@ -25,7 +25,7 @@ namespace BookStore.Pages
         {
             if (string.IsNullOrWhiteSpace(Author))
             {
-                Author = "Unknown";
+                Author = "Mathias";
             }
         }
     }

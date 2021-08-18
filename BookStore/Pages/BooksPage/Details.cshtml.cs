@@ -5,21 +5,20 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using BookStore.Data;
-using BookStore.Model;
+using BookStore.Models;
 
-namespace BookStore.Pages.BookPages
+namespace BookStore.Pages.BooksPage
 {
     public class DetailsModel : PageModel
     {
-        private readonly BookStore.Data.BookStoreContext _context;
+        private readonly BookStore.Models.BookContext _context;
 
-        public DetailsModel(BookStore.Data.BookStoreContext context)
+        public DetailsModel(BookStore.Models.BookContext context)
         {
             _context = context;
         }
 
-        public BooksModel BooksModel { get; set; }
+        public Book Book { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,9 +27,9 @@ namespace BookStore.Pages.BookPages
                 return NotFound();
             }
 
-            BooksModel = await _context.BooksModel.FirstOrDefaultAsync(m => m.Id == id);
+            Book = await _context.Books.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (BooksModel == null)
+            if (Book == null)
             {
                 return NotFound();
             }

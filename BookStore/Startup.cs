@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using BookStore.Data;
+using BookStore.Models;
 
 namespace BookStore
 {
@@ -27,7 +27,7 @@ namespace BookStore
         {
             services.AddRazorPages();
 
-            services.AddDbContext<BookStoreContext>(options =>
+            services.AddDbContext<BookContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("BookStoreContext")));
         }
 

@@ -1,5 +1,5 @@
 ﻿@page
-@model BookStore.Pages.BookPages.IndexModel
+@model BookStore.Pages.BooksPage.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -8,31 +8,31 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Add New Book</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.BooksModel[0].Title)
+                @Html.DisplayNameFor(model => model.Book[0].Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BooksModel[0].Author)
+                @Html.DisplayNameFor(model => model.Book[0].Author)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BooksModel[0].Description)
+                @Html.DisplayNameFor(model => model.Book[0].Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BooksModel[0].Category)
+                @Html.DisplayNameFor(model => model.Book[0].Category)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BooksModel[0].ReleaseDate)
+                @Html.DisplayNameFor(model => model.Book[0].ReleaseDate)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.BooksModel) {
+@foreach (var item in Model.Book) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)

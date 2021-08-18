@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BooksAPI.Models
+namespace BookStore.Models
 {
     public class Book
     {

@@ -6,22 +6,21 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using BookStore.Data;
-using BookStore.Model;
+using BookStore.Models;
 
-namespace BookStore.Pages.BookPages
+namespace BookStore.Pages.BooksPage
 {
     public class EditModel : PageModel
     {
-        private readonly BookStore.Data.BookStoreContext _context;
+        private readonly BookStore.Models.BookContext _context;
 
-        public EditModel(BookStore.Data.BookStoreContext context)
+        public EditModel(BookStore.Models.BookContext context)
         {
             _context = context;
         }
 
         [BindProperty]
-        public BooksModel BooksModel { get; set; }
+        public Book Book { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,9 +29,9 @@ namespace BookStore.Pages.BookPages
                 return NotFound();
             }
 
-            BooksModel = await _context.BooksModel.FirstOrDefaultAsync(m => m.Id == id);
+            Book = await _context.Books.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (BooksModel == null)
+            if (Book == null)
             {
                 return NotFound();
             }
@@ -48,7 +47,7 @@ namespace BookStore.Pages.BookPages
                 return Page();
             }
 
-            _context.Attach(BooksModel).State = EntityState.Modified;
+            _context.Attach(Book).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +55,7 @@ namespace BookStore.Pages.BookPages
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!BooksModelExists(BooksModel.Id))
+                if (!BookExists(Book.Id))
                 {
                     return NotFound();
                 }
@@ -69,9 +68,9 @@ namespace BookStore.Pages.BookPages
             return RedirectToPage("./Index");
         }
 
-        private bool BooksModelExists(int id)
+        private bool BookExists(int id)
         {
-            return _context.BooksModel.Any(e => e.Id == id);
+            return _context.Books.Any(e => e.Id == id);
         }
     }
 }

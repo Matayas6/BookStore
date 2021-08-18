@@ -5,16 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using BookStore.Data;
-using BookStore.Model;
+using BookStore.Models;
 
-namespace BookStore.Pages.BookPages
+namespace BookStore.Pages.BooksPage
 {
     public class CreateModel : PageModel
     {
-        private readonly BookStore.Data.BookStoreContext _context;
+        private readonly BookStore.Models.BookContext _context;
 
-        public CreateModel(BookStore.Data.BookStoreContext context)
+        public CreateModel(BookStore.Models.BookContext context)
         {
             _context = context;
         }
@@ -25,7 +24,7 @@ namespace BookStore.Pages.BookPages
         }
 
         [BindProperty]
-        public BooksModel BooksModel { get; set; }
+        public Book Book { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -35,7 +34,7 @@ namespace BookStore.Pages.BookPages
                 return Page();
             }
 
-            _context.BooksModel.Add(BooksModel);
+            _context.Books.Add(Book);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
