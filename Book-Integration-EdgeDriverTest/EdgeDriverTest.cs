@@ -27,6 +27,28 @@ namespace Book_Integration_EdgeDriverTest
             _driver = new EdgeDriver(options);
         }
 
+
+
+        public void AddDevice()
+        {
+            _driver.Url = "https://localhost:44372/AddBooks";
+            var title = _driver.FindElementById("AddBook_Title");
+            title.SendKeys("Brain Jotter");
+
+            var author = _driver.FindElementById("AddBook_Author");
+            author.SendKeys("Chinia Achebe");
+
+            var description = _driver.FindElementById("AddBook_Description");
+            description.SendKeys("comical");
+
+            var category = _driver.FindElementById("AddBook_Category");
+            category.SendKeys("comic");
+
+            var button = _driver.FindElementById("submit");
+            button.Click();
+
+        }
+
         [TestMethod]
         public void VerifyPageTitle()
         {
@@ -40,5 +62,7 @@ namespace Book_Integration_EdgeDriverTest
         {
             _driver.Quit();
         }
+
+
     }
 }

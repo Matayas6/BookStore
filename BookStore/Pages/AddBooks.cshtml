@@ -6,11 +6,28 @@
 
 <h1>Add Book</h1>
 <form method="post">
-    <input type="text" asp-for="AddBook.Id" placeholder="Id" />
-    <input type="text" asp-for="AddBook.Title" placeholder="Title" />
-    <input type="text" asp-for="AddBook.Author" placeholder="Author" />
-    <input type="text" asp-for="AddBook.Description" placeholder="Description" />
-    <input type="text" asp-for="AddBook.Category" placeholder="Description" />
+    <div>
+        <label asp-for="AddBook.Title"></label>
+        <input asp-for="AddBook.Title" />
+    </div>
+    <div>
+        <label asp-for="AddBook.Author"></label>
+        <input asp-for="AddBook.Author" />
+    </div>
+    <div>
+        <label asp-for="AddBook.Description"></label>
+        <input asp-for="AddBook.Description" />
+    </div>
+    <div>
+        <label asp-for="AddBook.Category"></label>
+        <input asp-for="AddBook.Category" />
+    </div>
 
-    <button type="submit">Submit</button>
+    <input id="submit" type="submit" value="Search" />
 </form>
+
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+            }

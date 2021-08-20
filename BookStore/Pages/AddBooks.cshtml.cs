@@ -12,6 +12,10 @@ namespace BookStore.Pages.BookPages
         [BindProperty]
         public Book AddBook { get; set; }
         public object Author { get; set; }
+        public object Title { get; set; }
+        public object Description { get; set; }
+        public object Category { get; set; }
+
 
         public void OnGet()
         {
