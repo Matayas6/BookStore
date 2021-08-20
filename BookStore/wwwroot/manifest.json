@@ -1,0 +1,16 @@
+{
+  
+    "name": "Book-Store Application",
+    "short_name": "Web BookStore",
+    "display": "minimal-ui",
+    "start_url": "/",
+    "scope": "/",
+    "icons": [
+      {
+        "src": "https://preview.pixlr.com/images/800wm/1255/1/1255104308.jpg",
+        "sizes": "800x562",
+        "type": "image/png"
+      }
+    ]
+  
+}
